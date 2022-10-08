@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function change(e){
+          console.log(e.target.value)  
+          console.log(document.getElementById('file').value)  
+          var s = document.getElementById('file').value
+          var file = s.split('\\').pop()
+          document.getElementById('fileSelcted').value = file
+        }
+    </script>
+</head>
+<body>
+    <input style="height: 32px;width:120px;background:black; color:white" type="button" id="loadFileXml" value="Upload" onclick="document.getElementById('file').click();" />
+    <input onchange="change(event)" type="file" style="display:none;" id="file" name="file"/>
+    <input type="text" id="fileSelcted" disabled placeholder="no file choosen">
+</body>
+</html>
